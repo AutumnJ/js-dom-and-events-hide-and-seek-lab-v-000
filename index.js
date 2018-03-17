@@ -21,5 +21,8 @@ function increaseRankBy(n) {
 //Define a function deepestChild() that pulls out the most deeply nested child from div#grand-node.
 function deepestChild(){
   const list = document.querySelectorAll('#grand-node div');
-  return list[list.length-1];
+  //could leave this line out, but technically a nodelist is not an array
+  //best not to treat it as one & convert it instead
+  const listArray= Array.from(list)
+  return listArray[listArray.length-1];
 }
